@@ -233,6 +233,9 @@ def generate_build_info(args):
   if "BuildThumbprint" in config:
     print(f"ro.build.thumbprint={config['BuildThumbprint']}")
 
+  if PRODUCT_OVERRIDE_FINGERPRINT:
+    print(f"ro.build.stock_fingerprint={PRODUCT_OVERRIDE_FINGERPRINT}")
+
   print(f"# end build properties")
 
 def write_properties_from_file(file):
